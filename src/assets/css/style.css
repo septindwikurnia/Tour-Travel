@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1; /* Membuat navigasi mengisi ruang yang tersisa */
+    display: flex;
+    justify-content: center; /* Memposisikan ul di tengah secara horizontal */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Efek hover pada link menu */
+nav ul li a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+/* Ikon Hamburger */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('../image/img.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 97%;
+    height: 100vh;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1000px;
+    text-align: left;
+    color: white;
+    padding-left: 70px;
+    padding-top: 150px;
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.hero-content .btn {
+    background-color: transparent;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid white; /* Tambahkan border putih */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi */
+}
+
+.hero-content .btn:hover {
+    background-color: white; /* Background menjadi putih saat hover */
+    color: black; /* Warna teks tetap hitam */
+}
+
+/* Navigasi Panah */
+.hero-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efek tanda panah */
+.nav-btn:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+
+/* Our Tours Section */
+.our-tours {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.our-tours h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.tour-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tour-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+}
+
+.tour-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.tour-item h3 {
+    font-size: 24px;
+    margin: 20px;
+}
+
+.tour-item p {
+    font-size: 16px;
+    margin: 0 20px 20px;
+    color: #555;
+}
+
+.tour-item .btn {
+    display: block;
+    margin: 0 20px 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tour-item .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Button Create Tour */
+#create-tour-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#create-tour-btn:hover {
+    background-color: #218838;
+}
+
+/* Create Tour Form */
+#create-tour-form {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;  /* Initially hidden */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#create-tour-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Tombol Update dan Delete */
+.tour-item .actions {
+    display: flex; /* Membuat tombol menjadi baris sejajar */
+    justify-content: space-between; /* Memberi jarak antara tombol */
+    padding: 10px 20px;
+}
+
+.tour-item .actions .btn {
+    flex: 1; /* Membuat kedua tombol memiliki ukuran yang sama */
+    margin: 0 5px; /* Memberi jarak antar tombol */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tour-item .actions .btn.update-btn {
+    background-color: #d7e3fc; /* Warna kuning untuk tombol Update */
+    color: black;
+}
+
+.tour-item .actions .btn.update-btn:hover {
+    background-color: #d7e3fc;
+}
+
+.tour-item .actions .btn.delete-btn {
+    background-color: #dc3545; /* Warna merah untuk tombol Delete */
+}
+
+.tour-item .actions .btn.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+/* Input and Textarea Styling */
+#create-tour-form input, 
+#create-tour-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#create-tour-form input:focus, 
+#create-tour-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Label Styling */
+#create-tour-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Submit Button */
+#create-tour-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#create-tour-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tour-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tour-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #create-tour-form {
+        width: 90%;
+    }
+}
+
+/* Update Tour Form */
+#update-tour-form {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+#update-tour-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Input and Textarea Styling for Update Form */
+#update-tour-form input,
+#update-tour-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#update-tour-form input:focus,
+#update-tour-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Label Styling for Update Form */
+#update-tour-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Submit Button for Update Form */
+#update-tour-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#update-tour-form button:hover {
+    background-color: #218838;
+}
+
+/* Cancel Button for Update Form */
+#update-tour-form .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#update-tour-form .cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design for Update Form */
+@media (max-width: 768px) {
+    #update-tour-form {
+        width: 90%;
+    }
+}
+
+
+
+
+
